@@ -76,8 +76,8 @@ const SkillPageScreen = () => {
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-lg font-medium text-gray-700">Pending Confirmation</p>
-          <p className="text-sm text-gray-500">Please wait while we process your request...</p>
+          <p className="text-lg font-medium text-gray-700">Coming Soon </p>
+          <p className="text-sm text-gray-500">Will Update This Page Soon ....</p>
         </div>
 
       </div>

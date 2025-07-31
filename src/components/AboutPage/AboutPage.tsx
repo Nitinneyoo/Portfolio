@@ -1,12 +1,12 @@
 import { Github, Linkedin, Twitter, Code, Database, Settings, Briefcase, GraduationCap } from 'lucide-react';
-
-
+import { useState } from 'react'; // Import useState
 
 interface Experience {
   href: string;
   icon: React.ElementType;
   label: string;
 }
+
 // Reusable SocialLink component with hover animation
 const SocialLink = ({ href, icon: Icon, label }: Experience) => (
   <a
@@ -21,7 +21,7 @@ const SocialLink = ({ href, icon: Icon, label }: Experience) => (
 );
 
 // Reusable SkillTag component with fade-in animation
-const SkillTag = ({ skill }) => (
+const SkillTag = ({ skill }: { skill: string }) => (
   <div className="bg-gray-800/70 border border-gray-700/50 rounded-md px-3 py-1 text-sm text-gray-300 animate-fade-in">
     {skill}
   </div>
@@ -41,8 +41,8 @@ const BioSection = () => (
       <span className="font-semibold text-white">Connect with me:</span>
       <div className="flex items-center gap-4">
         {[
-          { href: "https://github.com/your-username", icon: Github, label: "GitHub" },
-          { href: "https://linkedin.com/in/your-username", icon: Linkedin, label: "LinkedIn" },
+          { href: "https://github.com/Nitinneyoo", icon: Github, label: "GitHub" },
+          { href: "https://linkedin.com/in/nitin-yadav-2b21a220b/", icon: Linkedin, label: "LinkedIn" },
           { href: "https://twitter.com/your-username", icon: Twitter, label: "Twitter" },
         ].map(link => (
           <SocialLink key={link.label} href={link.href} icon={link.icon} label={link.label} />
@@ -89,10 +89,9 @@ const ExperienceSection = () => (
     <h2 className="text-3xl md:text-4xl font-bold text-white">Experience</h2>
     <div className="relative border-l-2 border-cyan-400 pl-6">
       {[
-
         {
           role: "Frontend Developer",
-          company: "Webify Studios",
+          company: "Anscer Robotics",
           period: "2025 - present",
           description: "Built responsive UI with React and Tailwind CSS, reducing page load times by 25%."
         },
@@ -101,6 +100,12 @@ const ExperienceSection = () => (
           company: "Acer India",
           period: "2024-2025",
           description: "Worked on various projects, enhancing technical skills and gaining hands-on experience in the tech industry."
+        },
+        {
+          role: "Graduate Engineer Trainee",
+          company: "Bharat Heavy Electrical Limited (BHEL)",
+          period: "2023-2024",
+          description: "Gained foundational engineering skills and practical experience in a leading manufacturing company."
         }
       ].map((exp, index) => (
         <div key={index} className="mb-8 animate-slide-in-left">
@@ -114,6 +119,40 @@ const ExperienceSection = () => (
   </div>
 );
 
+// WakaTimeChart component with loading state
+const WakaTimeChart = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div className="mt-16 animate-fade-in">
+      <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">My Coding Activity</h2>
+      <div className="relative w-full min-h-[300px]">
+        {isLoading && (
+          <div className="absolute inset-0 bg-gray-800/50 rounded-lg animate-pulse flex items-center justify-center">
+            <p className="text-gray-400">Loading WakaTime Chart...</p>
+          </div>
+        )}
+        <iframe
+          src="https://wakatime.com/share/@Nitinneyoo/f988bb1d-89a8-47f0-bc22-d18bb61a32e2.svg"
+          className={`w-full h-auto min-h-[500px] border-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          title="WakaTime Coding Activity Chart"
+          onLoad={() => setIsLoading(false)}
+        ></iframe>
+        <div className='p-2 flex justify-center'>
+          <p className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"> - A visual representation of my Language activity over the past month.</p>
+        </div>
+        <iframe
+          src="https://wakatime.com/share/@Nitinneyoo/e6ea73ad-d15d-4456-bbea-74960999ea6e.svg"
+          className={`w-full h-auto min-h-[500px] border-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          title="WakaTime Coding Activity Chart"
+          onLoad={() => setIsLoading(false)}
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
+
 const AboutPageScreen = () => (
   <section id="about" className="py-20 lg:py-32 bg-gradient-to-b from-gray-900 to-gray-800">
     <div className="container mx-auto px-4">
@@ -122,6 +161,7 @@ const AboutPageScreen = () => (
         <SkillsSection />
       </div>
       <ExperienceSection />
+      <WakaTimeChart />
     </div>
   </section>
 );

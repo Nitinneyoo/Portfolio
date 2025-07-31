@@ -23,7 +23,7 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   return (
     <header>
       <nav
@@ -63,6 +63,7 @@ export function Navigation() {
                     <Link
                       to={item.href}
                       className="text-foreground hover:text-foreground flex items-center gap-2 duration-150 hover:font-bold hover:zoom-out-50"
+                      activeProps={{ className: "text-cyan-900 font-bold" }}
                     >
                       <item.icon className="size-4" />
                       <span>{item.name}</span>
@@ -80,6 +81,7 @@ export function Navigation() {
                       <Link
                         to={item.href}
                         className="text-foreground hover:text-foreground flex items-center gap-2 duration-150"
+                        activeProps={{ className: "text-cyan-900 font-bold" }}
                       >
                         <item.icon className="size-4" />
                         <span>{item.name}</span>

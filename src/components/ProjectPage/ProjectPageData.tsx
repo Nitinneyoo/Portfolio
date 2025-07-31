@@ -15,7 +15,7 @@ export const projects = [
     title: "JavaScript Mastery",
     description: "A Puma website clone focusing on complex layouts and responsive design with pure CSS.",
     tags: ["HTML5", "CSS3", "Responsive Design"],
-    imageUrl: "https://images.unsplash.com/photo-1628255341785-4076694689c9?q=80&w=1964&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop",
     githubUrl: "https://github.com/Nitinneyoo/Puma-website-clone",
     liveUrl: "https://puma-website-clone-alpha.vercel.app/",
     category: "Frontend",
@@ -24,10 +24,10 @@ export const projects = [
     timeframe: "1.5 months"
   },
   {
-    title: "Razorpay Clone",
+    title: "Hono Server",
     description: "A pixel-perfect Razorpay homepage clone built with Tailwind CSS to showcase utility-first styling.",
     tags: ["HTML5", "Tailwind CSS"],
-    imageUrl: "https://images.unsplash.com/photo-1616469829935-c2f334623b8c?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: "/Todo.png",
     githubUrl: "https://github.com/Nitinneyoo/Razorpay-Clone",
     liveUrl: "https://razorpay-clone-singhnitin.vercel.app/",
     category: "Frontend",

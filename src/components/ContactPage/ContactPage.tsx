@@ -1,7 +1,4 @@
-import React from 'react';
 
-// You can use any icon from lucide-react or other libraries
-// For this example, we'll create a simple gem shape with SVG.
 const GemIcon = () => (
   <svg
     width="48"
@@ -42,21 +39,6 @@ const ContactPageScreen = () => {
       {/* We are defining the custom animation keyframes here using a style tag.
         In a real project, this would go into your tailwind.config.js file.
       */}
-      <style>
-        {`
-          @keyframes swing {
-            0%, 100% {
-              transform: rotate(15deg);
-            }
-            50% {
-              transform: rotate(-15deg);
-            }
-          }
-          .animate-swing {
-            animation: swing 3s ease-in-out infinite;
-          }
-        `}
-      </style>
 
       <div className="w-full h-screen bg-slate-50 flex flex-col items-center justify-center font-sans">
         <div className="relative flex flex-col items-center">
@@ -76,8 +58,8 @@ const ContactPageScreen = () => {
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-lg font-medium text-gray-700">Pending Confirmation</p>
-          <p className="text-sm text-gray-500">Please wait while we process your request...</p>
+          <p className="text-lg font-medium text-gray-700">Coming Soon </p>
+          <p className="text-sm text-gray-500">Will Update This Page Soon ....</p>
         </div>
 
       </div>

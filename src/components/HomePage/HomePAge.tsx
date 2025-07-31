@@ -1,8 +1,9 @@
+import { useState, useEffect } from 'react';
 import { Github, Twitter, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
+import { projects } from './HomePageProjectCrad'; // Assuming you have a projects data file
+import ColourfulText from '../ui/colourful-text';
 
-// --- 1. Reusable Components ---
-
-// Card for Projects
+// --- Card for Projects (No changes needed) ---
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -42,7 +43,8 @@ const ProjectCard = ({ title, description, tags, imageUrl, projectUrl }: Project
   );
 };
 
-// Social Media Link
+
+// --- Social Media Link (No changes needed) ---
 interface SocialLinkProps {
   href: string;
   icon: React.ElementType;
@@ -62,33 +64,36 @@ const SocialLink = ({ href, icon: Icon, 'aria-label': ariaLabel }: SocialLinkPro
 );
 
 
-// --- 2. Main Home Page Component ---
-
+// --- Main Home Page Component (Corrected) ---
 const HomePageScreen = () => {
+  // State for scroll animation
+  const [scale, setScale] = useState(1);
+  const [opacity, setOpacity] = useState(1);
+  const [y, setY] = useState(0);
 
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with features like product catalog, shopping cart, user authentication, and a Stripe integration for payments.",
-      tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-      imageUrl: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop",
-      projectUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management tool that helps teams organize, track, and manage their work with an intuitive drag-and-drop interface.",
-      tags: ["Next.js", "TypeScript", "Firebase", "Zustand"],
-      imageUrl: "/Todo.png",
-      projectUrl: "#"
-    },
-    {
-      title: "Portfolio Website V2",
-      description: "My personal portfolio site built with Next.js and styled with Tailwind CSS, showcasing my skills and projects in a clean, modern design.",
-      tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      imageUrl: "/Portfolio.png",
-      projectUrl: "#"
-    }
-  ];
+  // Scroll event handler for the video animation
+  useEffect(() => {
+    const handleScroll = () => {
+      const animationDistance = window.innerHeight;
+      const currentScrollY = window.scrollY;
+      let progress = currentScrollY / animationDistance;
+      progress = Math.max(0, Math.min(1, progress));
+
+      const newScale = 1 - progress * 0.3;
+      // Fade out the video completely after 80% scroll progress
+      const newOpacity = progress > 0.8 ? 1 - (progress - 0.8) / 0.2 : 1;
+      const newY = -progress * 30;
+
+      setScale(newScale);
+      setOpacity(newOpacity);
+      setY(newY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const socialLinks = [
     { href: "https://github.com/Nitinneyoo", icon: Github, label: "GitHub" },
@@ -97,17 +102,42 @@ const HomePageScreen = () => {
   ];
 
   return (
+    // This is the single parent element for the component
     <div className="bg-[#0a0a0a] text-white font-sans">
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_70%)]"></div>
+
+      {/* --- SCROLL ANIMATION CONTAINER --- */}
+      {/* This container creates the space for the scroll animation to happen */}
+      <div className="relative h-[200vh]">
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div
+            className="w-full h-full"
+            style={{
+              transform: `scale(${scale}) translateY(${y}%)`,
+              opacity: opacity,
+            }}
+          >
+            <video
+              className="w-full h-full object-cover rounded-2xl"
+              src="/5th.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline // Important for autoplay on iOS
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* --- MAIN PAGE CONTENT --- */}
+      {/* The negative margin pulls this content up to sit on top of the animation container */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-[100vh]">
 
         {/* --- Hero Section --- */}
         <section id="home" className="min-h-screen flex flex-col justify-center items-start">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
-            <span className="text-gray-400">I'm Nitin Singh.</span><br />
+            <span className="text-gray-400">I'm <ColourfulText text="Nitin Singh" />.</span><br />
             A Web Developer.
           </h1>
           <p className="max-w-xl text-gray-300 text-lg md:text-xl mb-8">
@@ -180,7 +210,7 @@ const HomePageScreen = () => {
             Have a project in mind or just want to say hello? My inbox is always open.
           </p>
           <a
-            href="mailto:your-email@example.com"
+            href="mailto:singhnitin2705@gmail.com"
             className="inline-flex items-center px-8 py-4 font-semibold text-lg text-black bg-cyan-400 rounded-lg shadow-lg hover:bg-cyan-300 transition-colors duration-300"
           >
             <Mail className="w-5 h-5 mr-3" /> Contact Me

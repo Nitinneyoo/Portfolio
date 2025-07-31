@@ -110,15 +110,7 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
 
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 @keyframes fade-in {
   from {
@@ -227,4 +219,21 @@
 
 .animate-delay-300 {
   animation-delay: 300ms;
+}
+
+
+@keyframes swing {
+
+  0%,
+  100% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+}
+
+.animate-swing {
+  animation: swing 3s ease-in-out infinite;
 }
