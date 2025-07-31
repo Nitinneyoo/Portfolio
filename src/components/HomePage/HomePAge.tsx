@@ -139,7 +139,7 @@ const HomePageScreen = () => {
         <section id="home" className="min-h-screen flex flex-col justify-center items-start">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4">
             <span className="text-gray-400">I'm <ColourfulText text="Nitin Singh" />.</span><br />
-            A Web Developer.
+            A <ColourfulText text="Front-End" /> Developer.
           </h1>
           <p className="max-w-xl text-gray-300 text-lg md:text-xl mb-8">
             I specialize in building modern, responsive, and user-friendly web applications. My passion lies in turning complex problems into beautiful, intuitive digital experiences.

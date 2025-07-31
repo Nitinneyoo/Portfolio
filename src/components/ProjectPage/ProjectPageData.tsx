@@ -53,7 +53,7 @@ export const projects = [
     tags: ["JavaScript", "API", "HTML5", "CSS3"],
     imageUrl: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop",
     githubUrl: "https://github.com/Nitinneyoo/Weather-App",
-    liveUrl: "https://weather-app-singhnitin.vercel.app/",
+    liveUrl: "/NotFoundPage/NotFoundPage",
     category: "Frontend",
     role: "Developer",
     impact: "Served 5,000+ weather queries",

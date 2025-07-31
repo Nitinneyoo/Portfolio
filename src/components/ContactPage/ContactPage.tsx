@@ -31,7 +31,7 @@ const ContactPage = () => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     // TODO: Add form submission logic here (e.g., using an API route, Formspree, etc.)
-    alert("Form submitted! (This is a placeholder)");
+    alert("Form submitted! ");
   };
 
   return (
