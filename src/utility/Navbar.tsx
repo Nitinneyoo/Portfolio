@@ -62,7 +62,7 @@ export function Navigation() {
                   <li key={index}>
                     <Link
                       to={item.href}
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 duration-150 hover:font-bold hover:zoom-out-50"
+                      className="text-foreground hover:text-foreground flex items-center gap-2 duration-150 hover:font-bold hover:zoom-out-50"
                     >
                       <item.icon className="size-4" />
                       <span>{item.name}</span>
@@ -79,7 +79,7 @@ export function Navigation() {
                     <li key={index}>
                       <Link
                         to={item.href}
-                        className="text-muted-foreground hover:text-foreground flex items-center gap-2 duration-150"
+                        className="text-foreground hover:text-foreground flex items-center gap-2 duration-150"
                       >
                         <item.icon className="size-4" />
                         <span>{item.name}</span>
