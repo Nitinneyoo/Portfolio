@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Github, Twitter, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
 import { projects } from './HomePageProjectCrad'; // Assuming you have a projects data file
 import ColourfulText from '../ui/colourful-text';
-import ContactPage from 'src/components/ContactPage/ContactPage';
 
 // --- Card for Projects (No changes needed) ---
 interface ProjectCardProps {

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Code, Database, Settings, Briefcase, GraduationCap } from 'lucide-react';
+import { Github, Linkedin, Twitter, Code, Database, Settings, Briefcase } from 'lucide-react';
 import { useState } from 'react'; // Import useState
 
 interface Experience {
