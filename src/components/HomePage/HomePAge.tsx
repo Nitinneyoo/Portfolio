@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Github, Twitter, Linkedin, Mail, ArrowRight, Download } from 'lucide-react';
 import { projects } from './HomePageProjectCrad'; // Assuming you have a projects data file
 import ColourfulText from '../ui/colourful-text';
+import ContactPage from 'src/components/ContactPage/ContactPage';
 
 // --- Card for Projects (No changes needed) ---
 interface ProjectCardProps {
@@ -118,7 +119,7 @@ const HomePageScreen = () => {
           >
             <video
               className="w-full h-full object-cover rounded-2xl"
-              src="/Segment_3.mp4"
+              src="/Segment_7.mp4"
               autoPlay
               loop
               muted
@@ -145,13 +146,13 @@ const HomePageScreen = () => {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#contact"
+              href="/ContactSection"
               className="inline-flex items-center justify-center px-6 py-3 font-semibold text-black bg-white rounded-lg shadow-lg hover:bg-gray-200 transition-colors duration-300"
             >
               Get in Touch
             </a>
             <a
-              href="/resume.pdf"
+              href="/Nitinsingh_Resume.pdf"
               download
               className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white bg-gray-800/50 border border-gray-700 rounded-lg hover:bg-gray-800 transition-colors duration-300"
             >

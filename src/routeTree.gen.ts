@@ -15,6 +15,12 @@ import { Route as ProjectSectionRouteRouteImport } from './routes/ProjectSection
 import { Route as ContactSectionRouteRouteImport } from './routes/ContactSection/route'
 import { Route as AboutSectionRouteRouteImport } from './routes/AboutSection/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NotFoundPageNotFoundPageRouteImport } from './routes/NotFoundPage/NotFoundPage'
+import { Route as FooterPagesTermsServicesPageRouteRouteImport } from './routes/FooterPages/TermsServicesPage/route'
+import { Route as FooterPagesPrivacyPolicyPageRouteRouteImport } from './routes/FooterPages/PrivacyPolicyPage/route'
+import { Route as FooterPagesFaqSectionRouteRouteImport } from './routes/FooterPages/FaqSection/route'
+import { Route as FooterPagesChangeLogPageRouteRouteImport } from './routes/FooterPages/ChangeLogPage/route'
+import { Route as FooterPagesBlogSectionRouteRouteImport } from './routes/FooterPages/BlogSection/route'
 
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
@@ -46,6 +52,42 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NotFoundPageNotFoundPageRoute =
+  NotFoundPageNotFoundPageRouteImport.update({
+    id: '/NotFoundPage/NotFoundPage',
+    path: '/NotFoundPage/NotFoundPage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FooterPagesTermsServicesPageRouteRoute =
+  FooterPagesTermsServicesPageRouteRouteImport.update({
+    id: '/FooterPages/TermsServicesPage',
+    path: '/FooterPages/TermsServicesPage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FooterPagesPrivacyPolicyPageRouteRoute =
+  FooterPagesPrivacyPolicyPageRouteRouteImport.update({
+    id: '/FooterPages/PrivacyPolicyPage',
+    path: '/FooterPages/PrivacyPolicyPage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FooterPagesFaqSectionRouteRoute =
+  FooterPagesFaqSectionRouteRouteImport.update({
+    id: '/FooterPages/FaqSection',
+    path: '/FooterPages/FaqSection',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FooterPagesChangeLogPageRouteRoute =
+  FooterPagesChangeLogPageRouteRouteImport.update({
+    id: '/FooterPages/ChangeLogPage',
+    path: '/FooterPages/ChangeLogPage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FooterPagesBlogSectionRouteRoute =
+  FooterPagesBlogSectionRouteRouteImport.update({
+    id: '/FooterPages/BlogSection',
+    path: '/FooterPages/BlogSection',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +96,12 @@ export interface FileRoutesByFullPath {
   '/ProjectSection': typeof ProjectSectionRouteRoute
   '/SkillSection': typeof SkillSectionRouteRoute
   '/about': typeof AboutRoute
+  '/FooterPages/BlogSection': typeof FooterPagesBlogSectionRouteRoute
+  '/FooterPages/ChangeLogPage': typeof FooterPagesChangeLogPageRouteRoute
+  '/FooterPages/FaqSection': typeof FooterPagesFaqSectionRouteRoute
+  '/FooterPages/PrivacyPolicyPage': typeof FooterPagesPrivacyPolicyPageRouteRoute
+  '/FooterPages/TermsServicesPage': typeof FooterPagesTermsServicesPageRouteRoute
+  '/NotFoundPage/NotFoundPage': typeof NotFoundPageNotFoundPageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +110,12 @@ export interface FileRoutesByTo {
   '/ProjectSection': typeof ProjectSectionRouteRoute
   '/SkillSection': typeof SkillSectionRouteRoute
   '/about': typeof AboutRoute
+  '/FooterPages/BlogSection': typeof FooterPagesBlogSectionRouteRoute
+  '/FooterPages/ChangeLogPage': typeof FooterPagesChangeLogPageRouteRoute
+  '/FooterPages/FaqSection': typeof FooterPagesFaqSectionRouteRoute
+  '/FooterPages/PrivacyPolicyPage': typeof FooterPagesPrivacyPolicyPageRouteRoute
+  '/FooterPages/TermsServicesPage': typeof FooterPagesTermsServicesPageRouteRoute
+  '/NotFoundPage/NotFoundPage': typeof NotFoundPageNotFoundPageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +125,12 @@ export interface FileRoutesById {
   '/ProjectSection': typeof ProjectSectionRouteRoute
   '/SkillSection': typeof SkillSectionRouteRoute
   '/about': typeof AboutRoute
+  '/FooterPages/BlogSection': typeof FooterPagesBlogSectionRouteRoute
+  '/FooterPages/ChangeLogPage': typeof FooterPagesChangeLogPageRouteRoute
+  '/FooterPages/FaqSection': typeof FooterPagesFaqSectionRouteRoute
+  '/FooterPages/PrivacyPolicyPage': typeof FooterPagesPrivacyPolicyPageRouteRoute
+  '/FooterPages/TermsServicesPage': typeof FooterPagesTermsServicesPageRouteRoute
+  '/NotFoundPage/NotFoundPage': typeof NotFoundPageNotFoundPageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +141,12 @@ export interface FileRouteTypes {
     | '/ProjectSection'
     | '/SkillSection'
     | '/about'
+    | '/FooterPages/BlogSection'
+    | '/FooterPages/ChangeLogPage'
+    | '/FooterPages/FaqSection'
+    | '/FooterPages/PrivacyPolicyPage'
+    | '/FooterPages/TermsServicesPage'
+    | '/NotFoundPage/NotFoundPage'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +155,12 @@ export interface FileRouteTypes {
     | '/ProjectSection'
     | '/SkillSection'
     | '/about'
+    | '/FooterPages/BlogSection'
+    | '/FooterPages/ChangeLogPage'
+    | '/FooterPages/FaqSection'
+    | '/FooterPages/PrivacyPolicyPage'
+    | '/FooterPages/TermsServicesPage'
+    | '/NotFoundPage/NotFoundPage'
   id:
     | '__root__'
     | '/'
@@ -97,6 +169,12 @@ export interface FileRouteTypes {
     | '/ProjectSection'
     | '/SkillSection'
     | '/about'
+    | '/FooterPages/BlogSection'
+    | '/FooterPages/ChangeLogPage'
+    | '/FooterPages/FaqSection'
+    | '/FooterPages/PrivacyPolicyPage'
+    | '/FooterPages/TermsServicesPage'
+    | '/NotFoundPage/NotFoundPage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +184,12 @@ export interface RootRouteChildren {
   ProjectSectionRouteRoute: typeof ProjectSectionRouteRoute
   SkillSectionRouteRoute: typeof SkillSectionRouteRoute
   AboutRoute: typeof AboutRoute
+  FooterPagesBlogSectionRouteRoute: typeof FooterPagesBlogSectionRouteRoute
+  FooterPagesChangeLogPageRouteRoute: typeof FooterPagesChangeLogPageRouteRoute
+  FooterPagesFaqSectionRouteRoute: typeof FooterPagesFaqSectionRouteRoute
+  FooterPagesPrivacyPolicyPageRouteRoute: typeof FooterPagesPrivacyPolicyPageRouteRoute
+  FooterPagesTermsServicesPageRouteRoute: typeof FooterPagesTermsServicesPageRouteRoute
+  NotFoundPageNotFoundPageRoute: typeof NotFoundPageNotFoundPageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +236,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/NotFoundPage/NotFoundPage': {
+      id: '/NotFoundPage/NotFoundPage'
+      path: '/NotFoundPage/NotFoundPage'
+      fullPath: '/NotFoundPage/NotFoundPage'
+      preLoaderRoute: typeof NotFoundPageNotFoundPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/FooterPages/TermsServicesPage': {
+      id: '/FooterPages/TermsServicesPage'
+      path: '/FooterPages/TermsServicesPage'
+      fullPath: '/FooterPages/TermsServicesPage'
+      preLoaderRoute: typeof FooterPagesTermsServicesPageRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/FooterPages/PrivacyPolicyPage': {
+      id: '/FooterPages/PrivacyPolicyPage'
+      path: '/FooterPages/PrivacyPolicyPage'
+      fullPath: '/FooterPages/PrivacyPolicyPage'
+      preLoaderRoute: typeof FooterPagesPrivacyPolicyPageRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/FooterPages/FaqSection': {
+      id: '/FooterPages/FaqSection'
+      path: '/FooterPages/FaqSection'
+      fullPath: '/FooterPages/FaqSection'
+      preLoaderRoute: typeof FooterPagesFaqSectionRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/FooterPages/ChangeLogPage': {
+      id: '/FooterPages/ChangeLogPage'
+      path: '/FooterPages/ChangeLogPage'
+      fullPath: '/FooterPages/ChangeLogPage'
+      preLoaderRoute: typeof FooterPagesChangeLogPageRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/FooterPages/BlogSection': {
+      id: '/FooterPages/BlogSection'
+      path: '/FooterPages/BlogSection'
+      fullPath: '/FooterPages/BlogSection'
+      preLoaderRoute: typeof FooterPagesBlogSectionRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +288,14 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectSectionRouteRoute: ProjectSectionRouteRoute,
   SkillSectionRouteRoute: SkillSectionRouteRoute,
   AboutRoute: AboutRoute,
+  FooterPagesBlogSectionRouteRoute: FooterPagesBlogSectionRouteRoute,
+  FooterPagesChangeLogPageRouteRoute: FooterPagesChangeLogPageRouteRoute,
+  FooterPagesFaqSectionRouteRoute: FooterPagesFaqSectionRouteRoute,
+  FooterPagesPrivacyPolicyPageRouteRoute:
+    FooterPagesPrivacyPolicyPageRouteRoute,
+  FooterPagesTermsServicesPageRouteRoute:
+    FooterPagesTermsServicesPageRouteRoute,
+  NotFoundPageNotFoundPageRoute: NotFoundPageNotFoundPageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
