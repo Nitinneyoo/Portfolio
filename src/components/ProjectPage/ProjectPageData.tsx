@@ -9,7 +9,8 @@ export const projects = [
     category: "Frontend",
     role: "Full-Stack Developer",
     impact: "Improved API response handling by 40%",
-    timeframe: "2 months"
+    timeframe: "2 months",
+    className: "md:col-span-2",
   },
   {
     title: "JavaScript Mastery",
@@ -21,7 +22,8 @@ export const projects = [
     category: "Frontend",
     role: "Frontend Developer",
     impact: "Achieved 95% layout accuracy to original",
-    timeframe: "1.5 months"
+    timeframe: "1.5 months",
+    className: "md:col-span-2",
   },
   {
     title: "Hono Server",
@@ -33,7 +35,8 @@ export const projects = [
     category: "Frontend",
     role: "Frontend Developer",
     impact: "Reduced styling time by 30% using Tailwind",
-    timeframe: "1 month"
+    timeframe: "1 month",
+    className: "md:col-span-2",
   },
   {
     title: "Password Generator",
@@ -45,7 +48,8 @@ export const projects = [
     category: "Utility",
     role: "Developer",
     impact: "Generated 10,000+ passwords for users",
-    timeframe: "3 weeks"
+    timeframe: "3 weeks",
+    className: "md:col-span-2",
   },
   {
     title: "Weather App",
@@ -57,7 +61,8 @@ export const projects = [
     category: "Frontend",
     role: "Developer",
     impact: "Served 5,000+ weather queries",
-    timeframe: "1 month"
+    timeframe: "1 month",
+    className: "md:col-span-2",
   },
   {
     title: "My Portfolio",
@@ -69,6 +74,7 @@ export const projects = [
     category: "Full-Stack",
     role: "Full-Stack Developer",
     impact: "Showcased to 1,000+ visitors",
-    timeframe: "2 months"
+    timeframe: "2 months",
+    className: "md:col-span-2",
   }
 ];

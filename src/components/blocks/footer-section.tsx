@@ -2,8 +2,7 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { FacebookIcon, FrameIcon, Github, InstagramIcon, LinkedinIcon, Twitter, YoutubeIcon } from 'lucide-react';
-import PrivacyPolicyScreen from 'src/components/FooterPages/PrivacyPolicyPage/PrivacyPolicyScreen';
+import { FrameIcon, Github, LinkedinIcon, Twitter, YoutubeIcon } from 'lucide-react';
 
 interface FooterLink {
 	title: string;

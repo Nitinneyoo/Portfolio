@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Filter, Video } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
 import { projects } from './ProjectPageData'; // Your updated projects data file
 import { BentoGrid, BentoGridItem } from "@/components/magicui/bento-grid"; // Import BentoGrid
@@ -122,7 +122,7 @@ const VideoShowcase = ({ videos }: VideoShowcaseProps) => (
               poster={video.thumbnail}
               autoPlay
               muted
-              playsinline
+              // playsinline
               onError={(e) => { e.currentTarget.poster = 'https://placehold.co/600x400/0a0a0a/ffffff?text=Video+Error'; }}
             >
               <source src={video.url} type="video/mp4" />
@@ -199,11 +199,13 @@ const ProjectPageScreen = () => {
 
         {/* Replace the old grid with BentoGrid */}
         <BentoGrid>
-          {filteredProjects.map((project) => (
-            <BentoGridItem key={project.title} className={project.className}>
-              <ProjectCard {...project} />
-            </BentoGridItem>
-          ))}
+          {filteredProjects.map((project) => {
+            return (
+              <BentoGridItem key={project.title} className={project.className}>
+                <ProjectCard {...project} />
+              </BentoGridItem>
+            );
+          })}
         </BentoGrid>
 
       </div>
