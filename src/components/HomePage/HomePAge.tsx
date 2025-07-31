@@ -118,7 +118,7 @@ const HomePageScreen = () => {
           >
             <video
               className="w-full h-full object-cover rounded-2xl"
-              src="/5th.mp4"
+              src="/Segment_3.mp4"
               autoPlay
               loop
               muted

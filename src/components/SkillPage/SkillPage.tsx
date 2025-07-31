@@ -1,88 +1,106 @@
-import React from 'react';
+import { Cpu, Code, Database, Wrench } from 'lucide-react';
 
-// You can use any icon from lucide-react or other libraries
-// For this example, we'll create a simple gem shape with SVG.
-const GemIcon = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="text-blue-500 drop-shadow-lg"
-  >
-    <path
-      d="M12 2L2 8.5L12 22L22 8.5L12 2Z"
-      fill="currentColor"
-      stroke="#1E3A8A" // A darker blue for the stroke
-      strokeWidth="1.5"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M12 22V8.5"
-      stroke="#1E40AF"
-      strokeWidth="1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d="M2 8.5L12 8.5L22 8.5"
-      stroke="#3B82F6"
-      strokeWidth="1"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+const skillCategories = [
+  {
+    title: "Frontend Development",
+    icon: <Code className="w-6 h-6 text-cyan-400" />,
+    skills: [
+      { name: "React & Next.js" },
+      { name: "TypeScript" },
+      { name: "JavaScript (ES6+)" },
+      { name: "Tailwind CSS" },
+      { name: "Framer Motion" },
+      { name: "HTML5 & CSS3" },
+    ],
+  },
+  {
+    title: "Backend Development",
+    icon: <Database className="w-6 h-6 text-green-400" />,
+    skills: [
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "MongoDB & Mongoose" },
+      { name: "RESTful APIs" },
+      { name: "Authentication (JWT)" },
+      { name: "GraphQL (Basic)" },
+    ],
+  },
+  {
+    title: "Core Concepts & Languages",
+    icon: <Cpu className="w-6 h-6 text-yellow-400" />,
+    skills: [
+      { name: "Data Structures" },
+      { name: "Algorithms" },
+      { name: "Object-Oriented Programming" },
+      { name: "C++" },
+      { name: "Python" },
+      { name: "Java" },
+    ],
+  },
+  {
+    title: "Tools & Platforms",
+    icon: <Wrench className="w-6 h-6 text-red-400" />,
+    skills: [
+      { name: "Git & GitHub" },
+      { name: "VS Code" },
+      { name: "Vercel & Netlify" },
+      { name: "Postman" },
+      { name: "Docker (Basic)" },
+      { name: "Linux/Unix CLI" },
+    ],
+  },
+];
 
 
+
+// --- Main Skill Page Component ---
 const SkillPageScreen = () => {
   return (
-    <>
-      {/* We are defining the custom animation keyframes here using a style tag.
-        In a real project, this would go into your tailwind.config.js file.
-      */}
-      <style>
-        {`
-          @keyframes swing {
-            0%, 100% {
-              transform: rotate(15deg);
-            }
-            50% {
-              transform: rotate(-15deg);
-            }
-          }
-          .animate-swing {
-            animation: swing 3s ease-in-out infinite;
-          }
-        `}
-      </style>
-
-      <div className="w-full h-screen bg-slate-50 flex flex-col items-center justify-center font-sans">
-        <div className="relative flex flex-col items-center">
-          {/* The chain of the pendant */}
-          <div className="w-0.5 h-24 bg-gray-300 rounded-full"></div>
-
-          {/* The swinging part of the pendant */}
-          <div
-            className="relative w-12 h-12 flex items-center justify-center transform-origin-top animate-swing"
-          >
-            {/* The top loop that connects to the chain */}
-            <div className="absolute -top-2 w-4 h-4 rounded-full border-2 border-gray-400 bg-white"></div>
-
-            {/* The Gem Icon */}
-            <GemIcon />
-          </div>
+    <div className="bg-[#0a0a0a] text-white font-sans min-h-screen">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_70%)]"></div>
         </div>
 
-        <div className="text-center mt-8">
-          <p className="text-lg font-medium text-gray-700">Coming Soon </p>
-          <p className="text-sm text-gray-500">Will Update This Page Soon ....</p>
+        {/* --- Header --- */}
+        <div className="relative z-10 text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+            Technologies & Skills
+          </h1>
+          <p className="max-w-2xl mx-auto text-gray-400 text-lg">
+            A collection of the primary tools, languages, and frameworks I utilize for building modern web applications.
+          </p>
         </div>
 
+        {/* --- Skills Grid --- */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {skillCategories.map((category) => (
+            <div
+              key={category.title}
+              className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-cyan-400/50 transition-colors duration-300"
+            >
+              <div className="flex items-center mb-4">
+                {category.icon}
+                <h2 className="text-2xl font-bold ml-3">{category.title}</h2>
+              </div>
+              <ul className="space-y-3">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill.name}
+                    className="text-gray-300 flex items-center group"
+                  >
+                    <span className="text-cyan-400 mr-3 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    <span>{skill.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default SkillPageScreen;

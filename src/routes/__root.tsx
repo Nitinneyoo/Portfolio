@@ -5,7 +5,7 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <Navigation />
-      <main className="pt-20 min-h-screen">
+      <main className="min-h-screen">
         <Outlet />
       </main>
 

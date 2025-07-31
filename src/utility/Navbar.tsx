@@ -23,7 +23,7 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <header>
       <nav
@@ -32,7 +32,7 @@ export function Navigation() {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
+            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 bg-background/30 backdrop-blur-md rounded-lg",
             isScrolled &&
             "bg-background/80 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5",
           )}
