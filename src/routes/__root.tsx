@@ -1,4 +1,4 @@
-import Footer from '@/components/blocks/footer-section'
+import Footer from '@/components/Footer/footer-section'
 import { Navigation } from '@/utility/Navbar'
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 
