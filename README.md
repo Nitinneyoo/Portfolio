@@ -33,13 +33,13 @@ You need to have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Nitinneyoo/Portfolio.git
     ```
 
 2.  **Navigate to the project directory:**
 
     ```bash
-    cd your-repo-name
+    cd Portfolio
     ```
 
 3.  **Install the dependencies:**
@@ -84,7 +84,7 @@ The project structure is organized as follows:
 └── vite.config.ts       # Vite configuration
 ```
 
-## 部署 (Deployment)
+##  (Deployment)
 
 To build the application for production, run the following command:
 
