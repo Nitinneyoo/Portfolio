@@ -7,11 +7,11 @@ export const projects = [
     projectUrl: "#"
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management tool that helps teams organize, track, and manage their work with an intuitive drag-and-drop interface.",
-    tags: ["Next.js", "TypeScript", "Firebase", "Zustand"],
+    title: "School Website",
+    description: "A school Website built with modern web technologies, featuring a responsive design and interactive elements.",
+    tags: ["Typescript", "Tailwind css", "React"],
     imageUrl: "/Todo.png",
-    projectUrl: "#"
+    projectUrl: "https://modelmiddleschool.vercel.app/",
   },
   {
     title: "Portfolio Website V2",
