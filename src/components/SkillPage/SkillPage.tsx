@@ -22,7 +22,7 @@ const skillCategories = [
       { name: "MongoDB & Mongoose" },
       { name: "RESTful APIs" },
       { name: "Authentication (JWT)" },
-      { name: "GraphQL (Basic)" },
+
     ],
   },
   {
@@ -34,7 +34,7 @@ const skillCategories = [
       { name: "Object-Oriented Programming" },
       { name: "C++" },
       { name: "Python" },
-      { name: "Java" },
+
     ],
   },
   {

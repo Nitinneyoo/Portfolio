@@ -55,9 +55,9 @@ const BioSection = () => (
 // SkillsSection component with categorized skills and animation
 const SkillsSection = () => {
   const skills = {
-    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5 & CSS3", "Vue.js"],
-    backend: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase", "REST & GraphQL APIs"],
-    tools: ["Git & GitHub", "Webpack", "Docker", "Figma", "VS Code", "Jest"],
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5 & CSS3"],
+    backend: ["Node.js", "Express.js", "MongoDB", "Firebase", "REST & GraphQL APIs"],
+    tools: ["Git & GitHub", "Webpack", "Docker", "Figma", "VS Code"],
     others: ["Agile Methodologies", "CI/CD", "AWS Basics", "Web Accessibility"]
   };
 
